@@ -29,8 +29,9 @@ describe('UserController', () => {
       const appController = app.get(UserController);
       const userService = app.get(UserService);
 
-      const orga = new OrgaEntity('orgaName');
+      const orga = new OrgaEntity(1, 'orgaName');
       const loadedUserEntity = new UserEntity(
+        1,
         'email@email.com',
         orga,
       ) as Loaded<UserEntity, 'orga'>; // @martin is this normal to have to cast it?

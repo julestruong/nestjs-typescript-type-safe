@@ -10,8 +10,8 @@ export class UserController {
 
   @Get()
   create(): Promise<Loaded<UserEntity, 'orga'>> {
-    const orga = new OrgaEntity('orgaName');
-    const user = new UserEntity('email@email.com', orga);
+    const orga = new OrgaEntity(2, 'orgaName');
+    const user = new UserEntity(2, 'email@email.com', orga);
     const userCreated = this.userService.createUser(user, {
       populate: ['orga'],
     });

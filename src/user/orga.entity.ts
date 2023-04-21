@@ -12,7 +12,8 @@ export class OrgaEntity {
   @OneToMany(() => UserEntity, (user) => user.orga)
   users: UserEntity[];
 
-  constructor(name: string) {
+  constructor(id: number, name: string) {
+    this.id = id;
     this.name = name;
   }
 }

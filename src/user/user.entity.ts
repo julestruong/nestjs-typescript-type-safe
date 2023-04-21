@@ -12,7 +12,8 @@ export class UserEntity {
   @ManyToOne(() => OrgaEntity)
   orga: Ref<OrgaEntity>;
 
-  constructor(email: string, orga: OrgaEntity) {
+  constructor(id: number, email: string, orga: OrgaEntity) {
+    this.id = id;
     this.email = email;
     this.orga = orga as unknown as Ref<OrgaEntity>; // @martin how do i set the orga here ?
   }
