@@ -1,4 +1,4 @@
-import { Controller, Post } from '@nestjs/common';
+import { Controller, Get, Post } from '@nestjs/common';
 import { UserService } from './user.service';
 import { UserEntity } from './user.entity';
 import { OrgaEntity } from './orga.entity';
@@ -8,7 +8,7 @@ import { Loaded } from '@mikro-orm/core';
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
-  @Post()
+  @Get()
   create(): Promise<Loaded<UserEntity, 'orga'>> {
     const orga = new OrgaEntity('orgaName');
     const user = new UserEntity('email@email.com', orga);

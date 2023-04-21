@@ -7,8 +7,8 @@ import { UserModule } from './user/user.module';
 @Module({
   imports: [
     MikroOrmModule.forRoot({
-      entities: ['./dist/entities'],
-      entitiesTs: ['./src/entities'],
+      entities: ['dist/**/*.entity.js'],
+      entitiesTs: ['src/**/*.entity.ts'],
       dbName: 'my-db-name.sqlite3',
       type: 'sqlite',
     }),
